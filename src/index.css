@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark theme by default for RapBuddy */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 4.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 263 85% 74%;  /* Neon purple */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 328 85% 60%;  /* Neon pink */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 6% 10%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 199 84% 55%;  /* Neon blue */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 240 4.9% 83.9%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 263 85% 74%;  /* Neon purple */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 328 85% 60%;  /* Neon pink */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 199 84% 55%;  /* Neon blue */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+
+    --radius: 0.75rem;
+    
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(155, 135, 245, 0.1) 0%, transparent 20%),
+      radial-gradient(circle at 90% 80%, rgba(217, 70, 239, 0.1) 0%, transparent 20%),
+      radial-gradient(circle at 50% 50%, rgba(30, 174, 219, 0.05) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-righteous;
+  }
+}
+
+@layer components {
+  .neon-text {
+    @apply animate-pulse-neon;
+  }
+  
+  .neon-purple {
+    @apply text-neon-purple;
+    text-shadow: 0 0 5px theme('colors.neon.purple'), 0 0 10px theme('colors.neon.purple');
+  }
+  
+  .neon-pink {
+    @apply text-neon-pink;
+    text-shadow: 0 0 5px theme('colors.neon.pink'), 0 0 10px theme('colors.neon.pink');
+  }
+  
+  .neon-blue {
+    @apply text-neon-blue;
+    text-shadow: 0 0 5px theme('colors.neon.blue'), 0 0 10px theme('colors.neon.blue');
+  }
+  
+  .neon-orange {
+    @apply text-neon-orange;
+    text-shadow: 0 0 5px theme('colors.neon.orange'), 0 0 10px theme('colors.neon.orange');
+  }
+
+  .neon-glow {
+    @apply animate-glow;
+  }
+
+  .glass-card {
+    @apply bg-black/30 backdrop-blur-md border border-white/10 shadow-lg;
+  }
+
+  .beat-icon {
+    @apply inline-block animate-bounce-slow;
+  }
+}
